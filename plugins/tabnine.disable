@@ -1,0 +1,31 @@
+local prefix = "<leader>q"
+
+return {
+  "codota/tabnine-nvim",
+  build = "./dl_binaries.sh",
+  config = function()
+    require("astronvim.utils").set_mappings {
+      n = {
+        [prefix] = { desc = " AI Assist (Tabnine)" },
+        [prefix .. "o"] = { ":TabnineToggle<cr>", desc = "Toggle Tabnine" },
+        [prefix .. "c"] = { ":TabnineChat<cr>", desc = "Tabnine Chat" },
+      },
+      v = {
+        [prefix] = { desc = " AI Assist (Tabnine)" },
+        [prefix .. "f"] = { ":TabnineFix<cr>", desc = "Fix function in Scope." },
+        [prefix .. "x"] = { ":TabnineExplain<cr>", desc = "Explain function in scope." },
+        [prefix .. "t"] = { ":TabnineTest<cr>", desc = "Generate tests for the function in scope." },
+      },
+    }
+  end,
+  init = function()
+    require("tabnine").setup {
+      accept_keymap = "<C-l>",
+      dismiss_keymap = "<C-]>",
+      debounce_ms = 500,
+      suggestion_color = { gui = "#808080", cterm = 244 },
+      exclude_filetypes = { "TelescopePrompt", "NvimTree" },
+      log_file_path = "/Users/raymonddoran/.config/tabnine.log", -- absolute path to Tabnine log file
+    }
+  end,
+}

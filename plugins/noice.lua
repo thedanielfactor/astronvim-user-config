@@ -159,11 +159,11 @@ return {
       })
     end,
   },
-  {
-    "catppuccin/nvim",
-    optional = true,
-    opts = { integrations = { noice = true } },
-  },
+  -- {
+  --   "catppuccin/nvim",
+  --   optional = true,
+  --   opts = { integrations = { noice = true } },
+  -- },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)

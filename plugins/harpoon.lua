@@ -61,15 +61,16 @@ return {
 				},
 			})
 		end,
+
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim",
 		},
 		cmd = { "Harpoon" },
 	},
-	{
-		"catppuccin/nvim",
-		optional = true,
-		opts = { integrations = { harpoon = true } },
-	},
+	-- {
+	-- 	"catppuccin/nvim",
+	-- 	optional = true,
+	-- 	opts = { integrations = { harpoon = true } },
+	-- },
 }

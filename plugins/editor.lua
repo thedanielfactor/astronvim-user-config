@@ -1,3 +1,4 @@
+
 return {
   {
     "folke/zen-mode.nvim",
@@ -123,5 +124,4 @@ return {
     },
     opts = { n_lines = 200 },
   },
-  { "wakatime/vim-wakatime", event = "User AstroFile" },
 }
